@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep-dive — глибокі теми</title>
+<meta name="description" content="Глибокі розбори найімовірніших тем співбесіди: user stories/AC, subscription-метрики, elicitation-to-acceptance, RAG/eval, пріоритезація.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2333569b'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>P</text></svg>">
+</head>
+<body data-page="deepdive">
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="mark">P</span> Interview Prep</a>
+    <a class="tab" href="index.html">Основи</a>
+    <a class="tab" href="vacancy-legal-po.html">Вакансія 1</a>
+    <a class="tab" href="vacancy-ai-pm.html">Вакансія 2</a>
+    <span class="sep"></span>
+    <a class="tab" href="star-trainer.html">STAR</a>
+    <a class="tab" href="mock.html">Mock</a>
+    <a class="tab active" href="deep-dive.html">Deep-dive</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Практика · Глибина</span>
+  <h1>Deep-dive: 5 тем «на глибину»</h1>
+  <p class="lead">Мідл+ співбесіди перевіряють не знання термінів, а глибину: наскрізні приклади, трейд-офи, «а що якщо». Тут — 5 найімовірніших тем, розібраних докладніше, з наскрізними прикладами.</p>
+</div>
+
+<main>
+
+  <div class="toc">
+    <h3>Зміст</h3>
+    <ol>
+      <li><a href="#story">User story + AC end-to-end</a></li>
+      <li><a href="#retention">Subscription-метрики та retention</a></li>
+      <li><a href="#elicitation">Elicitation → acceptance (BABOK)</a></li>
+      <li><a href="#rag">RAG та eval для AI-фічі</a></li>
+      <li><a href="#prio">Пріоритезація: RICE vs WSJF на числах</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <section id="story">
+    <h2 class="section-title"><span class="num">1</span> User story + AC end-to-end</h2>
+    <p class="section-sub">Наскрізний приклад: від epic до готових AC та розбивки.</p>
+    <div class="card">
+      <h4>Крок 1. Epic → історія</h4>
+      <p><b>Epic:</b> «Користувач може знаходити релевантні юрфірми в директорії».</p>
+      <p><b>Story:</b> <em>Як користувач, що шукає юриста, я хочу фільтрувати фірми за юрисдикцією та практикою, щоб швидко знайти релевантні варіанти.</em></p>
+      <h4>Крок 2. Перевірка INVEST</h4>
+      <p>Незалежна (можна зробити окремо), обговорювана, цінна (ядро цінності директорії), оцінна, мала (влазить у спринт), тестована. Якщо «завелика» — розбиваємо (нижче).</p>
+      <h4>Крок 3. Acceptance Criteria</h4>
+      <div class="fact">
+        <b>Сценарій (Given-When-Then):</b><br>
+        <b>Given</b> користувач на сторінці директорії,<br>
+        <b>When</b> обирає юрисдикцію «UK» і практику «M&A»,<br>
+        <b>Then</b> бачить лише фірми з рейтингом у цій зв'язці, відсортовані за band (найвищий зверху).
+      </div>
+      <p><b>Правила/edge (чек-ліст):</b></p>
+      <ul>
+        <li>Порожній результат → показати порожній стан + пропозиції суміжних практик.</li>
+        <li>Можна комбінувати кілька практик (OR у межах фільтра).</li>
+        <li>Повний профіль фірми доступний за рівнем підписки; без підписки — прев'ю + CTA.</li>
+        <li>Фільтр зберігається в URL (можна поділитися посиланням).</li>
+      </ul>
+      <h4>Крок 4. Story splitting (якщо завелика)</h4>
+      <ul>
+        <li>За workflow: спершу фільтр за 1 виміром (юрисдикція), далі — комбінований.</li>
+        <li>За правилами: MVP без урахування підписки → потім paywall-логіка.</li>
+        <li>Happy path → edge (порожній стан, помилки) окремими історіями.</li>
+      </ul>
+      <div class="tip"><strong>DoR перед спринтом:</strong> є макет, дані рейтингів доступні, залежність від сервісу підписки прояснена. <strong>DoD:</strong> код + тести + рев'ю + аналітика подій фільтра + задеплоєно.</div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section id="retention">
+    <h2 class="section-title"><span class="num">2</span> Subscription-метрики та retention</h2>
+    <p class="section-sub">Глибше, ніж «знаю, що таке churn». Як реально аналізувати утримання.</p>
+    <div class="card">
+      <h4>Retention curve і когорти</h4>
+      <p>Retention міряють <b>когортами</b>: група, що прийшла в один період, і скільки з неї активні через 1/7/30/90 днів. Крива зазвичай падає, а потім <b>виходить на плато</b> — рівень плато показує, чи є product-market fit. Плоскіше й вище плато = здоровіший продукт.</p>
+      <h4>Ключові метрики та звʼязок</h4>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Метрика</th><th>Що каже</th></tr></thead>
+          <tbody>
+            <tr><td><b>Activation rate</b></td><td>% нових, що дійшли до «aha». Leading для retention.</td></tr>
+            <tr><td><b>Churn rate</b></td><td>% підписників, втрачених за період. Logo vs revenue churn.</td></tr>
+            <tr><td><b>NRR (Net Revenue Retention)</b></td><td>Дохід від наявних когорт з урахуванням апгрейдів − churn. &gt;100% = зростання без нових клієнтів.</td></tr>
+            <tr><td><b>LTV : CAC</b></td><td>Цінність клієнта до вартості залучення. Здорове ≈ 3:1.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Наскрізний приклад: «retention падає»</h4>
+      <ol>
+        <li><b>Сегментувати:</b> новий vs наявний, план, канал. Часто проблема — рання (onboarding), не пізня.</li>
+        <li><b>Локалізувати:</b> на якому кроці/тижні відвал (воронка в GA4).</li>
+        <li><b>Зрозуміти чому:</b> Clarity (сесії), інтервʼю з churned.</li>
+        <li><b>Важіль:</b> activation (швидше до цінності) зазвичай дає найбільший приріст retention.</li>
+        <li><b>Гіпотеза → A/B → метрика:</b> retention когорти + activation rate.</li>
+      </ol>
+      <div class="fact"><strong>Часте питання:</strong> «Retention чи acquisition — що важливіше?» → Зазвичай <b>retention</b>: діряве відро не наповнити трафіком; retention множить ефект acquisition і живить NRR. Але залежить від стадії продукту.</div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section id="elicitation">
+    <h2 class="section-title"><span class="num">3</span> Elicitation → acceptance (BABOK end-to-end)</h2>
+    <p class="section-sub">Повний цикл вимог на одному прикладі — для BA-вакансії.</p>
+    <div class="card">
+      <p><b>Приклад:</b> новий модуль звітності для клієнта (будівельний консалтинг).</p>
+      <ol>
+        <li><b>Strategy analysis:</b> поточний стан (звіти вручну в Excel, довго, помилки) → бажаний стан (автоматизована звітність) → <b>capability gap</b> → опції рішення.</li>
+        <li><b>Elicitation:</b> інтервʼю з користувачами звітів, воркшоп із стейкхолдерами, аналіз наявних шаблонів (document analysis), спостереження за процесом.</li>
+        <li><b>Аналіз і специфікація:</b>
+          <ul>
+            <li>Business req: «скоротити час підготовки звіту на 70%».</li>
+            <li>Stakeholder req: фінансовий контролер має бачити X; менеджер проєкту — Y.</li>
+            <li>Solution: functional (генерація, фільтри, експорт) + <b>NFR</b> (звіт за &lt;5 c, дані актуальні на день, доступ за роллю).</li>
+            <li>Constraints/interfaces: інтеграція з наявним ERP, формат вивантаження.</li>
+          </ul>
+        </li>
+        <li><b>Моделювання:</b> BPMN as-is/to-be процесу звітності, use cases, data model полів звіту.</li>
+        <li><b>Requirements lifecycle:</b> traceability (ціль → вимога → тест), пріоритезація (MoSCoW), impact analysis при змінах, схвалення.</li>
+        <li><b>Solution acceptance:</b> acceptance criteria, UAT з користувачами, внутрішнє й зовнішнє приймання.</li>
+        <li><b>Solution evaluation:</b> після релізу — чи скоротився час звіту на цільові 70%; усунути обмеження цінності.</li>
+      </ol>
+      <div class="tip"><strong>Сильний хід:</strong> проговорити цикл через <b>BACCM</b> — Change (автоматизація), Need (швидкість/точність), Solution (модуль), Stakeholders (контролер/PM), Value (−70% часу), Context (ERP клієнта).</div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="rag">
+    <h2 class="section-title"><span class="num">4</span> RAG та eval для AI-фічі</h2>
+    <p class="section-sub">Глибше про AI-в-продукті — диференціатор для «AI PM».</p>
+    <div class="card">
+      <h4>Як працює RAG (спрощено)</h4>
+      <ol>
+        <li>Документи ріжуть на шматки (chunks) і перетворюють на <b>embeddings</b> (вектори), зберігають у vector store.</li>
+        <li>На запит користувача система знаходить найрелевантніші шматки (semantic search).</li>
+        <li>Ці шматки додаються в <b>контекст</b> промпту, і LLM генерує відповідь, спираючись на них.</li>
+      </ol>
+      <p><b>Навіщо:</b> відповідь спирається на джерела клієнта (свіжі, доменні), менше галюцинацій, можна показати посилання на джерело.</p>
+      <h4>Що може «зламатися» (і про що спитають)</h4>
+      <ul>
+        <li><b>Retrieval:</b> знайшли не ті шматки → відповідь хибна попри «grounding». Міряють retrieval-якість окремо.</li>
+        <li><b>Chunking:</b> надто великі/малі шматки псують релевантність.</li>
+        <li><b>Generation:</b> модель ігнорує контекст або додає своє.</li>
+      </ul>
+      <h4>Eval-харнес (як оцінювати)</h4>
+      <ul>
+        <li><b>Retrieval-метрики:</b> чи знайдено потрібний документ (recall@k, precision).</li>
+        <li><b>Відповідь:</b> faithfulness (чи спирається на джерела, без вигадок), релевантність, повнота.</li>
+        <li><b>Offline eval set</b> із ground truth + <b>online</b> сигнали: правки людиною, escalation, задоволеність, cost/latency.</li>
+        <li>Для критичних розрахунків — обчислення <b>детермінованим кодом</b>, LLM лише витягує/структурує.</li>
+      </ul>
+      <div class="fact"><strong>Sound-bite для співбесіди:</strong> «RAG зменшує, але не усуває галюцинації — тому окремо міряю retrieval і faithfulness, а критичні числа не довіряю моделі, лише витяг + детермінований розрахунок + human-in-the-loop».</div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section id="prio">
+    <h2 class="section-title"><span class="num">5</span> Пріоритезація: RICE vs WSJF на числах</h2>
+    <p class="section-sub">Уміти не лише назвати, а порахувати й пояснити вибір.</p>
+    <div class="card">
+      <h4>RICE — приклад</h4>
+      <p>Формула: <b>(Reach × Impact × Confidence) / Effort</b>.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Фіча</th><th>Reach</th><th>Impact</th><th>Conf.</th><th>Effort</th><th>RICE</th></tr></thead>
+          <tbody>
+            <tr><td>A: покращити onboarding</td><td>5000</td><td>2</td><td>0.8</td><td>3</td><td><b>2667</b></td></tr>
+            <tr><td>B: новий фільтр пошуку</td><td>3000</td><td>1</td><td>0.9</td><td>2</td><td><b>1350</b></td></tr>
+            <tr><td>C: інтеграція звітів</td><td>800</td><td>3</td><td>0.7</td><td>5</td><td><b>336</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Висновок: <b>A</b> найвище (широке охоплення × впевненість / помірний effort), попри менший per-user impact ніж C.</p>
+      <h4>WSJF — приклад (SAFe)</h4>
+      <p>Формула: <b>Cost of Delay / Job Size</b>, де CoD = user-value + time-criticality + risk/opportunity.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Фіча</th><th>CoD (сума)</th><th>Job Size</th><th>WSJF</th></tr></thead>
+          <tbody>
+            <tr><td>X: compliance-дедлайн</td><td>24</td><td>3</td><td><b>8.0</b></td></tr>
+            <tr><td>Y: велика, але не термінова</td><td>18</td><td>8</td><td><b>2.25</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>WSJF підсвічує <b>терміновість</b>: X виграє через time-criticality, навіть якщо Y «більша».</p>
+      <div class="fact"><strong>Коли що:</strong> RICE — для порівняння продуктових ініціатив за очікуваним впливом; WSJF — коли ключова <b>вартість затримки</b> (дедлайни, compliance). Обидва — інструмент структурувати діалог, а не замінник рішення.</div>
+    </div>
+  </section>
+
+  <div class="callout">Це найімовірніші «глибокі» теми, але не єдині. Якщо на реальній співбесіді копнуть в іншу — принцип той самий: <b>структура → приклад → трейд-оф → метрика</b>.</div>
+
+</main>
+
+<a href="#" class="totop" aria-label="Нагору">↑</a>
+
+<footer class="site">
+  Interview Prep · Deep-dive ·
+  <a href="index.html">← до Основ</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

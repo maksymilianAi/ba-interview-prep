@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STAR-репетитор — behavioral практика</title>
+<meta name="description" content="Побудуй власні STAR-історії під ймовірні behavioral-питання. Зберігається локально в браузері.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2333569b'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>P</text></svg>">
+</head>
+<body data-page="star">
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="mark">P</span> Interview Prep</a>
+    <a class="tab" href="index.html">Основи</a>
+    <a class="tab" href="vacancy-legal-po.html">Вакансія 1</a>
+    <a class="tab" href="vacancy-ai-pm.html">Вакансія 2</a>
+    <span class="sep"></span>
+    <a class="tab active" href="star-trainer.html">STAR</a>
+    <a class="tab" href="mock.html">Mock</a>
+    <a class="tab" href="deep-dive.html">Deep-dive</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Практика · Behavioral</span>
+  <h1>STAR-репетитор</h1>
+  <p class="lead">Найважливіша частина будь-якої співбесіди — власні історії. Впиши під кожне ймовірне питання свою реальну ситуацію за схемою S-T-A-R. Усе зберігається у цьому браузері (нічого нікуди не надсилається). Ціль — коротка, конкретна історія з вимірюваним результатом, яку можна проговорити за 60-90 секунд.</p>
+</div>
+
+<main>
+
+  <div class="card">
+    <h3>Як користуватись</h3>
+    <ul>
+      <li><b>S — Situation:</b> короткий контекст (де, коли, яка проблема). 1-2 речення.</li>
+      <li><b>T — Task:</b> твоя конкретна задача/відповідальність у цій ситуації.</li>
+      <li><b>A — Action:</b> що <b>саме ти</b> зробила (від першої особи, крок за кроком). Це серце історії.</li>
+      <li><b>R — Result:</b> результат, бажано <b>з цифрою</b> (%, час, гроші, метрика). Що змінилось і чого навчилась.</li>
+    </ul>
+    <div class="tip"><strong>Порада:</strong> кажи «я зробила», а не тільки «ми зробили» — інтервʼюер оцінює <b>твій</b> внесок. Тримай історію стислою: галузь → дія → результат.</div>
+  </div>
+
+  <div class="star-tools">
+    <div class="timer" id="timer">
+      <button class="btn" id="timerBtn">▶ Старт</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+    <span class="saved-note">Ціль проговорення: 60-90 сек · дані зберігаються локально</span>
+    <span class="spacer"></span>
+    <button class="btn" id="expandAll">Розгорнути всі</button>
+    <button class="btn" id="collapseAll">Згорнути всі</button>
+    <button class="btn" id="copyAll">Скопіювати всі</button>
+    <button class="btn" id="printBtn">Друк / PDF</button>
+  </div>
+
+  <details class="star" data-q="conflict">
+    <summary>1. Конфлікт зі стейкхолдерами (або всередині команди) <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: комунікацію, вміння знаходити спільне рішення, зрілість. Дуже ймовірне для обох вакансій.</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Контекст: який проєкт, хто був у конфлікті, через що."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="Твоя роль/задача у вирішенні цієї ситуації."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Що саме ти зробила: як зʼясувала інтереси, як звела до спільного, як ухвалила рішення."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Результат із цифрою, якщо можливо. Що змінилось, чого навчилась."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <details class="star" data-q="unclear">
+    <summary>2. Нечітка / суперечлива вимога, яку довелось прояснити <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: elicitation, критичне мислення, роботу з невизначеністю. Ключове для BA-вакансії.</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Яка вимога була нечіткою/суперечливою і чому це було ризиком."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="Що треба було зʼясувати/узгодити."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Техніки: інтервʼю, воркшоп, декомпозиція, прототип, звірка джерел."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Як прояснення вплинуло на результат (менше переробок, чіткий scope тощо)."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <details class="star" data-q="data">
+    <summary>3. Рішення на основі даних (аналітика → зміна) <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: data-driven підхід. Сильний сигнал для Вакансії 1 (GA4/Power BI/Clarity).</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Яку проблему/можливість показали дані."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="Що треба було вирішити на основі даних."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Які метрики дивилась, яку гіпотезу висунула, який експеримент/зміну зробила."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Числовий результат: конверсія +X%, churn -Y% тощо."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <details class="star" data-q="said-no">
+    <summary>4. Коли відстояла пріоритет / сказала «ні» <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: пріоритезацію, вміння захистити рішення без псування стосунків.</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Хто й що просив, чому це конфліктувало з пріоритетами."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="Що треба було збалансувати."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Як обґрунтувала (product goal, дані, cost of delay), як комунікувала «ні»."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Наслідок рішення й що зберегла (фокус, час, якість)."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <details class="star" data-q="failure">
+    <summary>5. Провал / помилка й чого навчилась <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: самоусвідомлення, здатність приймати критику (прямо у вимогах Вакансії 2).</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Що пішло не так (чесно, але без самобичування)."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="За що ти відповідала."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Як відреагувала, що виправила, як мінімізувала наслідки."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Головне — висновок і що змінила в підході надалі."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <details class="star" data-q="distributed">
+    <summary>6. Складна комунікація / розподілена команда <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: роботу з remote/distributed (прямо у вимогах Вакансії 1) та комунікацію через часові пояси.</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Яка команда/стейкхолдери, у чому була складність (пояси, мова, канали)."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="Чого треба було досягти в комунікації."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Як налагодила: async-ясність, єдине джерело правди, домовленості, синхронізації."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Як покращилась співпраця/швидкість/якість."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <details class="star" data-q="biz-backlog">
+    <summary>7. Переклад бізнес-цілі в беклог / вимоги <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: суть ролі PO/BA — від мети до actionable роботи команди.</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Яка бізнес-ціль була (можливо, нечітка/висока)."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="Що треба було перетворити на беклог/вимоги."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Як декомпонувала: epics → stories, AC, пріоритезація, узгодження."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Що доставили й який бізнес-результат."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <details class="star" data-q="scope">
+    <summary>8. Управління зміною scope <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: solution scope, impact analysis, керування змінами (прямо у Вакансії 2).</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Яка зміна зʼявилась і чому (нова вимога, обмеження, ринок)."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="Що треба було зробити з цією зміною."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Impact analysis, перепріоритезація, узгодження зі стейкхолдерами, комунікація трейд-офів."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Як контрольовано впровадили зміну без хаосу."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <details class="star" data-q="top-mgmt">
+    <summary>9. Презентація / переговори з топ-менеджментом <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: комунікацію з великою аудиторією й керівництвом (прямо у вимогах Вакансії 2).</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Яка була аудиторія/ставки."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="Що треба було донести/узгодити."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Як підготувалась, як говорила від результату/ризику, як вела переговори."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Рішення/схвалення, якого досягла."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <details class="star" data-q="proud">
+    <summary>10. Досягнення, яким пишаєшся (вимірюваний результат) <span class="filled" data-filled></span></summary>
+    <div class="body">
+      <p class="probe">Що перевіряють: вплив і результат. Готова відповідь на «розкажи про досягнення».</p>
+      <div class="star-grid">
+        <div class="star-field"><label><span class="l">S</span> — Situation</label><textarea data-f="s" placeholder="Контекст досягнення."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">T</span> — Task</label><textarea data-f="t" placeholder="Твоя мета/виклик."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">A</span> — Action</label><textarea data-f="a" placeholder="Ключові дії, що привели до результату."></textarea><div class="wc" data-wc></div></div>
+        <div class="star-field"><label><span class="l">R</span> — Result</label><textarea data-f="r" placeholder="Вимірюваний результат, яким пишаєшся."></textarea><div class="wc" data-wc></div></div>
+      </div>
+      <ul class="star-check"></ul>
+      <div class="card-actions"><button class="btn" data-clear>Очистити цю історію</button></div>
+    </div>
+  </details>
+
+  <div class="callout">Порада для тренування: розгорни історію, запусти таймер і проговори її вголос англійською. Якщо не вклалась у 90 секунд — скороти Action до головного.</div>
+
+</main>
+
+<a href="#" class="totop" aria-label="Нагору">↑</a>
+
+<footer class="site">
+  Interview Prep · STAR-репетитор ·
+  <a href="mock.html">Mock-кейси →</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

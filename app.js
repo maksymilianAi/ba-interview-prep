@@ -10,13 +10,13 @@ if (toTop) {
   });
 }
 
-// Розгорнути / згорнути всі питання
+// Розгорнути / згорнути всі питання (питання + STAR-картки)
 const expandAll = document.getElementById('expandAll');
 const collapseAll = document.getElementById('collapseAll');
 if (expandAll) expandAll.addEventListener('click', () =>
-  document.querySelectorAll('details.acc').forEach(d => d.open = true));
+  document.querySelectorAll('details.acc, details.star').forEach(d => d.open = true));
 if (collapseAll) collapseAll.addEventListener('click', () =>
-  document.querySelectorAll('details.acc').forEach(d => d.open = false));
+  document.querySelectorAll('details.acc, details.star').forEach(d => d.open = false));
 
 // ---------- Набори питань для тестів (по сторінках) ----------
 const QUIZ_SETS = {
@@ -202,5 +202,119 @@ if (quizEl) {
     };
 
     render();
+  }
+}
+
+// ---------- STAR-репетитор ----------
+if (document.body.dataset.page === 'star') {
+  const FIELDS = ['s', 't', 'a', 'r'];
+  const LABEL = { s: 'S (Situation)', t: 'T (Task)', a: 'A (Action)', r: 'R (Result)' };
+  const key = (q, f) => 'star:' + q + ':' + f;
+  const words = (t) => t.trim() ? t.trim().split(/\s+/).length : 0;
+  const hasFirstPerson = (t) => /(^|[^а-яіїєґ'])(я|мене|мені|мною)([^а-яіїєґ']|$)/i.test(t);
+  const hasNumber = (t) => /\d/.test(t);
+
+  const cards = document.querySelectorAll('details.star');
+
+  const renderChecklist = (card) => {
+    const q = card.dataset.q;
+    const val = {};
+    FIELDS.forEach(f => { val[f] = (localStorage.getItem(key(q, f)) || '').trim(); });
+    const filled = FIELDS.filter(f => val[f]).length;
+    const total = FIELDS.reduce((n, f) => n + words(val[f]), 0);
+
+    const checks = [
+      { ok: filled === 4, txt: 'Усі 4 частини заповнені' },
+      { ok: hasNumber(val.r), txt: 'Result містить вимірюваний показник (цифру / %)' },
+      { ok: hasFirstPerson(val.a), txt: 'Action від першої особи («я …»), а не лише «ми»' },
+      { ok: total > 0 && total <= 180, txt: 'Стисло: сумарно до ~180 слів' + (total ? ' (зараз ' + total + ')' : '') }
+    ];
+    const ul = card.querySelector('.star-check');
+    ul.innerHTML = checks.map(c => '<li class="' + (c.ok ? 'ok' : '') + '">' + c.txt + '</li>').join('');
+
+    const fi = card.querySelector('[data-filled]');
+    if (fi) fi.textContent = filled === 4 ? '✓ готово' : (filled ? filled + '/4' : '');
+  };
+
+  cards.forEach(card => {
+    const q = card.dataset.q;
+    card.querySelectorAll('textarea[data-f]').forEach(ta => {
+      const f = ta.dataset.f;
+      ta.value = localStorage.getItem(key(q, f)) || '';
+      const wc = ta.parentElement.querySelector('[data-wc]');
+      const updWc = () => { if (wc) wc.textContent = words(ta.value) + ' сл.'; };
+      updWc();
+      ta.addEventListener('input', () => {
+        localStorage.setItem(key(q, f), ta.value);
+        updWc();
+        renderChecklist(card);
+      });
+    });
+    renderChecklist(card);
+
+    const clr = card.querySelector('[data-clear]');
+    if (clr) clr.addEventListener('click', () => {
+      if (!confirm('Очистити цю історію?')) return;
+      FIELDS.forEach(f => localStorage.removeItem(key(q, f)));
+      card.querySelectorAll('textarea[data-f]').forEach(ta => {
+        ta.value = '';
+        const wc = ta.parentElement.querySelector('[data-wc]');
+        if (wc) wc.textContent = '0 сл.';
+      });
+      renderChecklist(card);
+    });
+  });
+
+  // Скопіювати всі заповнені історії
+  const copyAll = document.getElementById('copyAll');
+  if (copyAll) copyAll.addEventListener('click', () => {
+    let out = [];
+    cards.forEach(card => {
+      const q = card.dataset.q;
+      const title = card.querySelector('summary').childNodes[0].textContent.trim();
+      const parts = FIELDS.map(f => {
+        const v = (localStorage.getItem(key(q, f)) || '').trim();
+        return v ? LABEL[f] + ': ' + v : '';
+      }).filter(Boolean);
+      if (parts.length) out.push('■ ' + title + '\n' + parts.join('\n'));
+    });
+    const text = out.join('\n\n');
+    if (!text) { copyAll.textContent = 'Поки порожньо'; setTimeout(() => copyAll.textContent = 'Скопіювати всі', 1500); return; }
+    navigator.clipboard.writeText(text).then(() => {
+      copyAll.textContent = 'Скопійовано ✓';
+      setTimeout(() => copyAll.textContent = 'Скопіювати всі', 1500);
+    }).catch(() => {
+      copyAll.textContent = 'Не вдалося';
+      setTimeout(() => copyAll.textContent = 'Скопіювати всі', 1500);
+    });
+  });
+
+  const printBtn = document.getElementById('printBtn');
+  if (printBtn) printBtn.addEventListener('click', () => {
+    document.querySelectorAll('details.star').forEach(d => d.open = true);
+    window.print();
+  });
+
+  // Таймер (для тренування 60-90 сек)
+  const timer = document.getElementById('timer');
+  const timerBtn = document.getElementById('timerBtn');
+  const clock = document.getElementById('clock');
+  if (timerBtn && clock) {
+    let sec = 0, id = null;
+    const fmt = () => {
+      const m = String(Math.floor(sec / 60)).padStart(2, '0');
+      const s = String(sec % 60).padStart(2, '0');
+      clock.textContent = m + ':' + s;
+    };
+    const stop = () => { clearInterval(id); id = null; timer.classList.remove('run'); timerBtn.textContent = '▶ Старт'; };
+    timerBtn.addEventListener('click', () => {
+      if (id) { stop(); return; }
+      timer.classList.add('run');
+      timerBtn.textContent = '⏸ Пауза';
+      id = setInterval(() => { sec++; fmt(); }, 1000);
+    });
+    clock.style.cursor = 'pointer';
+    clock.title = 'Клік — скинути';
+    clock.addEventListener('click', () => { stop(); sec = 0; fmt(); });
   }
 }
