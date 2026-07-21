@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вакансія 1 — Product Owner / BA</title>
+<meta name="description" content="Підготовка до співбесіди на Product Owner/BA: юридичні рейтинги, subscription-трансформація, refinement, AC, GTM, аналітика.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2333569b'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>1</text></svg>">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="mark">P</span> Interview Prep</a>
+    <a class="tab" href="index.html">Основи PO / PM</a>
+    <a class="tab active" href="vacancy-legal-po.html">Вакансія 1 · PO/BA</a>
+    <a class="tab" href="vacancy-ai-pm.html">Вакансія 2 · AI PM</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Сторінка 2 · Вакансія 1</span>
+  <h1>Product Owner / BA — юридичні рейтинги (London)</h1>
+  <p class="lead">Proxy Product Owner у бізнесі юридичних рейтингів і директорій, що переходить від print-видавництва до онлайн-підписки. Нижче — розбір домену, ключові теми під вимоги вакансії та питання для самоперевірки.</p>
+</div>
+
+<main>
+
+  <div class="toc">
+    <h3>Зміст</h3>
+    <ol>
+      <li><a href="#domain">Домен і компанія</a></li>
+      <li><a href="#role">Суть ролі: Proxy PO</a></li>
+      <li><a href="#refinement">Refinement, DoR, AC</a></li>
+      <li><a href="#flows">Process flows (BPMN)</a></li>
+      <li><a href="#subscription">Subscription-бізнес і метрики</a></li>
+      <li><a href="#analytics">Аналітика: GA4, Power BI, Clarity</a></li>
+      <li><a href="#ai">AI для ideation / прототипування</a></li>
+      <li><a href="#delivery">Release, incident, GTM</a></li>
+      <li><a href="#behavioral">Behavioral / STAR</a></li>
+      <li><a href="#ask">Питання інтерв'юеру</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <b>Головний акцент вакансії:</b> це не «класичний BA з вимогами», а <b>власність над беклогом</b> у ролі Proxy PO. Максимум балів дають чіткість у refinement/DoR/AC, робота з розподіленою командою, розуміння subscription-продукту та data-driven рішення.
+  </div>
+
+  <div class="block-header"><span class="tag">Контекст</span> Домен і роль</div>
+
+  <!-- 1 -->
+  <section id="domain">
+    <h2 class="section-title"><span class="num">1</span> Домен і компанія</h2>
+    <p class="section-sub">Знання домену — сильний сигнал на співбесіді.</p>
+    <div class="card">
+      <p><b>Що за бізнес:</b> глобальний лідер у дослідженні, рейтингуванні та директоріях юридичного ринку — ранжує «elite» (топ-5%) юрфірми та юристів у 200+ юрисдикціях. «Michelin guide юридичного світу»: юрфірми вкладають багато зусиль, щоб отримати рейтинг. Компанії ~30 років; у 2018 куплена private equity фондом для модернізації та зростання.</p>
+      <div class="fact">
+        <strong>Ймовірно це Chambers and Partners</strong> (або близький гравець типу Legal 500 / IFLR). Опис «~30 років, придбана PE у 2018, 200+ юрисдикцій, elite-рейтинги» найкраще пасує Chambers (придбана Inflexion у 2018). Не стверджуй напряму на співбесіді — але покажи, що розумієш ринок юридичних директорій і їхніх конкурентів.
+      </div>
+      <h4>Суть трансформації (це і буде робота)</h4>
+      <ul>
+        <li>Від <b>print-видавництва з рекламою</b> як основним доходом → до <b>онлайн-підписки</b> з data insight, рейтинговими директоріями та диференційованим контентом.</li>
+        <li>Від <b>анонімної аудиторії</b> → до <b>відомої</b> (known audience): реєстрації, профілі, поведінкові дані.</li>
+        <li>Побудова стратегічних клієнтських платформ і продуктів майбутнього.</li>
+      </ul>
+      <div class="tip"><strong>Дві сторони ринку:</strong> юрфірми/юристи (ті, кого ранжують і хто платить за присутність) та користувачі/клієнти, що шукають юристів. Думай про продукт як про <b>two-sided</b>: цінність і для тих, і для інших.</div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section id="role">
+    <h2 class="section-title"><span class="num">2</span> Суть ролі: Proxy Product Owner</h2>
+    <p class="section-sub">Як сформулювати, чим ти займатимешся.</p>
+    <div class="card">
+      <p>Перекладати бізнес- і довгострокові продуктові цілі в <b>actionable user stories</b> для agile-команди; тісно працювати з командою та ширшою організацією (стейкхолдери, залежні команди).</p>
+      <p><b>Обов'язки з вакансії:</b></p>
+      <div>
+        <span class="pill">Facilitate Refinement</span>
+        <span class="pill">Stories meet DoR</span>
+        <span class="pill">Accountable for AC</span>
+        <span class="pill">Document process flows</span>
+        <span class="pill">Clarifications to team</span>
+        <span class="pill">Escalate decisions</span>
+        <span class="pill">Keep team unblocked</span>
+        <span class="pill">Incident management</span>
+        <span class="pill">Release planning</span>
+        <span class="pill">Go-To-Market</span>
+      </div>
+      <div class="fact" style="margin-top:12px"><strong>Читай між рядків:</strong> «Raise issues with me that they cannot decide» — над нею є справжній Product Owner/менеджер. Вона ухвалює тактичні рішення й ескалує стратегічні. Це класична проксі-модель — і добре це проговорити.</div>
+    </div>
+  </section>
+
+  <div class="block-header"><span class="tag">Ремесло</span> Ключові навички під вакансію</div>
+
+  <!-- 3 -->
+  <section id="refinement">
+    <h2 class="section-title"><span class="num">3</span> Refinement, DoR, Acceptance Criteria</h2>
+    <p class="section-sub">Серце ролі — тут треба звучати впевнено й конкретно.</p>
+    <div class="card">
+      <h4>Facilitate Refinement (backlog grooming)</h4>
+      <ul>
+        <li>Мета: беклог зрозумілий, оцінений, пріоритезований, історії відповідають DoR перед плануванням.</li>
+        <li>Хто: PO + команда (+ за потреби стейкхолдери/дизайн). PO приносить контекст і «навіщо», команда — технічний виклик і оцінку.</li>
+        <li>Практики: розбивка великих історій, уточнення AC, виявлення залежностей і ризиків, підготовка на 1–2 спринти вперед.</li>
+      </ul>
+      <h4>Accountable for Acceptance Criteria</h4>
+      <p>Вона відповідає за те, щоб кожна історія мала чіткі, тестовані AC. Формати: <b>Given–When–Then</b> для сценаріїв, <b>чек-ліст правил</b> для складної логіки (напр. правила рейтингування, доступ за рівнем підписки).</p>
+      <div class="tip"><strong>Приклад під домен:</strong> історія «фільтр юрфірм за юрисдикцією та практикою». AC: Given користувач на сторінці директорії, When обирає юрисдикцію «UK» і практику «M&A», Then бачить лише фірми з рейтингом у цій зв'язці, відсортовані за band. Edge: немає результатів → показати порожній стан + пропозиції.</div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="flows">
+    <h2 class="section-title"><span class="num">4</span> Process flows (BPMN)</h2>
+    <p class="section-sub">«Document process flows where relevant» — прямо у вакансії.</p>
+    <div class="card">
+      <p>Вміти намалювати процес як діаграму. Базовий словник <b>BPMN</b>, якого достатньо:</p>
+      <ul>
+        <li><b>Events</b> — старт/кінець/проміжні (кружечки).</li>
+        <li><b>Activities/Tasks</b> — дії (прямокутники).</li>
+        <li><b>Gateways</b> — розгалуження/рішення (ромби): exclusive (XOR), parallel (AND).</li>
+        <li><b>Sequence flow</b> — стрілки послідовності; <b>Pools/Lanes</b> — хто виконує (ролі/системи).</li>
+      </ul>
+      <div class="fact"><strong>Приклад під домен:</strong> процес «submission → review → ranking decision → publication» для рейтингу: як фірма подає дані, як редактори оцінюють, де рішення (gateway: пройшла/не пройшла band), як публікується в директорії. Проговори swimlanes: Фірма / Редакція / Система.</div>
+      <p style="margin-bottom:0"><b>As-is vs To-be:</b> для трансформації часто малюють поточний процес і цільовий, підсвічуючи, що змінюється при переході на цифру/підписку.</p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section id="subscription">
+    <h2 class="section-title"><span class="num">5</span> Subscription-бізнес і метрики</h2>
+    <p class="section-sub">Ядро трансформації — покажи, що мислиш підпискою.</p>
+    <div class="card">
+      <ul>
+        <li><b>Модель:</b> дохід від підписок (recurring), а не разова реклама. Ключові важелі: залучення → активація → утримання → розширення.</li>
+        <li><b>Метрики:</b> MRR/ARR, churn, retention/NRR, conversion (free→paid), activation, LTV, CAC, LTV:CAC.</li>
+        <li><b>Known audience:</b> реєстрація і профілі дають дані для персоналізації, сегментації та data insight — головна продуктова ставка.</li>
+        <li><b>Freemium / paywall:</b> що безкоштовно (для охоплення) vs за підписку (диференційований контент, аналітика, повні директорії).</li>
+      </ul>
+      <div class="tip"><strong>Питання, яке можуть дати:</strong> «Як би ти підвищила retention підписки на юридичний data-продукт?» → почни з сегментів і джоб, подивись на activation та звичку (тижнева цінність), гіпотези, метрика успіху, експеримент. Не стрибай одразу у фічі.</div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="analytics">
+    <h2 class="section-title"><span class="num">6</span> Аналітика: GA4, Power BI, Microsoft Clarity</h2>
+    <p class="section-sub">«Will be a plus» — але згадка інструментів у вакансії означає, що спитають.</p>
+    <div class="card">
+      <div class="grid">
+        <div class="fact"><strong>Google Analytics (GA4)</strong><br>Поведінка на сайті: події, воронки, джерела трафіку, конверсії, утримання. Кількісне «що і скільки».</div>
+        <div class="fact"><strong>Power BI</strong><br>BI-дашборди: зведення даних з різних джерел, метрики бізнесу/підписки для стейкхолдерів.</div>
+        <div class="fact"><strong>Microsoft Clarity</strong><br>Якісне UX: heatmaps, session recordings, rage clicks — де користувачі «застрягають».</div>
+      </div>
+      <div class="tip" style="margin-top:12px"><strong>Quantitative vs qualitative:</strong> GA4/Power BI кажуть <b>що</b> відбувається (числа), Clarity/інтерв'ю — <b>чому</b>. Сильна відповідь поєднує обидва: «побачила спад конверсії в GA4 → подивилась записи сесій у Clarity → знайшла причину → гіпотеза → тест».</div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section id="ai">
+    <h2 class="section-title"><span class="num">7</span> AI для ideation / прототипування</h2>
+    <p class="section-sub">«Strong plus» — і зараз це очікуваний скіл. Кілька готових прикладів.</p>
+    <div class="card">
+      <p>Як PO може використовувати AI у роботі (варто мати 2–3 конкретні приклади):</p>
+      <ul>
+        <li><b>Ideation:</b> генерація й стрес-тест гіпотез, конкурентний аналіз, чернетки user stories та AC для подальшого рев'ю.</li>
+        <li><b>Прототипування:</b> швидкі clickable-прототипи / mock-дані для валідації ідеї до розробки.</li>
+        <li><b>Синтез досліджень:</b> кластеризація фідбеку, самарі інтерв'ю та відкритих відповідей.</li>
+        <li><b>Продукт на AI:</b> для юридичного data-бізнесу — семантичний пошук по директоріях, самарі профілів, асистенти для порівняння фірм.</li>
+      </ul>
+      <div class="fact"><strong>Важливий нюанс:</strong> AI прискорює чернетки, але <b>відповідальність і валідація — на людині</b>. Для юридичного домену згадай точність, джерела й ризик галюцинацій (детальніше — на сторінці Вакансії 2).</div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section id="delivery">
+    <h2 class="section-title"><span class="num">8</span> Release planning, Incident management, GTM</h2>
+    <p class="section-sub">Решта обов'язків — коротко, щоб не плавати.</p>
+    <div class="card">
+      <ul>
+        <li><b>Release planning:</b> що входить у реліз, залежності між командами, ризики, послідовність, комунікація стейкхолдерам. Feature flags / поетапний rollout для зниження ризику.</li>
+        <li><b>Incident management:</b> роль PO — пріоритезація впливу на бізнес/користувача, комунікація зі стейкхолдерами, узгодження тимчасового обходу vs фіксу, після — postmortem і беклог-айтеми на запобігання.</li>
+        <li><b>Go-To-Market (GTM):</b> як фіча/продукт виходить на ринок: цільовий сегмент, ціннісна пропозиція, ціноутворення/пакування, канали, готовність підтримки/маркетингу/продажів, метрики успіху запуску.</li>
+        <li><b>Keep team unblocked:</b> проактивно знімати залежності, швидко давати clarifications, тримати «наступне» готовим (DoR).</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="block-header"><span class="tag">Розмова</span> Behavioral і питання</div>
+
+  <!-- 9 -->
+  <section id="behavioral">
+    <h2 class="section-title"><span class="num">9</span> Behavioral / STAR</h2>
+    <p class="section-sub">Готуй 4–5 історій із власного досвіду за схемою STAR.</p>
+    <div class="card">
+      <p><b>STAR:</b> Situation → Task → Action → Result (з цифрами, де можливо). Одна історія може закривати кілька питань.</p>
+      <h4>Ймовірні питання під цю роль</h4>
+      <ul>
+        <li>Розкажи, як ти перекладала нечітку бізнес-ціль у беклог.</li>
+        <li>Конфлікт пріоритетів між стейкхолдерами — як вирішила.</li>
+        <li>Складна історія, яку довелось розбити; як формулювала AC.</li>
+        <li>Робота з розподіленою/віддаленою командою через часові пояси.</li>
+        <li>Рішення, ухвалене на основі даних (аналітика → зміна).</li>
+        <li>Інцидент у проді — твоя роль і що змінили після.</li>
+        <li>Коли довелось сказати «ні» стейкхолдеру.</li>
+      </ul>
+      <div class="tip"><strong>Заготовки під профіль:</strong> 2+ роки BA, кілька компаній — обери історії, де видно <b>власність над рішенням</b> і <b>вимірюваний результат</b>, а не лише «зібрала вимоги».</div>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section id="ask">
+    <h2 class="section-title"><span class="num">10</span> Питання інтерв'юеру</h2>
+    <p class="section-sub">Хороші питання = зрілість. Обери 3–4.</p>
+    <div class="card">
+      <ul>
+        <li>Наскільки далеко просунулась цифрова трансформація print → subscription і що зараз найбільший виклик?</li>
+        <li>Як розподілена відповідальність між справжнім Product Owner і цією проксі-роллю?</li>
+        <li>Який стан беклогу й процесу refinement зараз — що хотіли б покращити?</li>
+        <li>Які продуктові метрики команда вважає головними (North Star)?</li>
+        <li>Наскільки команда data-driven — які інструменти й доступ до даних реально використовуються?</li>
+        <li>Як виглядає взаємодія між рейтинговою/редакційною стороною і продуктом?</li>
+        <li>Як команда сьогодні застосовує AI у роботі й продукті?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Self-check -->
+  <div class="block-header"><span class="tag">Самоперевірка</span> Питання</div>
+  <div class="btn-row">
+    <button class="btn" id="expandAll">Розгорнути всі</button>
+    <button class="btn" id="collapseAll">Згорнути всі</button>
+  </div>
+
+  <details class="acc"><summary><span class="qnum">1</span> Опиши бізнес компанії та суть трансформації.</summary><div class="body"><p>Глобальний лідер юридичних рейтингів/директорій, ранжує топ-5% фірм у 200+ юрисдикціях («Michelin guide юрсвіту»). Трансформація: від print+реклама до онлайн-підписки з data insight; від анонімної аудиторії до відомої. Ймовірно Chambers-типу гравець, придбаний PE у 2018.</p></div></details>
+  <details class="acc"><summary><span class="qnum">2</span> Що означає Proxy Product Owner у цій ролі?</summary><div class="body"><p>Представляє реального PO/бізнес: перекладає бізнес-цілі в user stories, ухвалює тактичні рішення (refinement, AC, unblock), ескалює стратегічні до менеджера над нею.</p></div></details>
+  <details class="acc"><summary><span class="qnum">3</span> Як ти фасилітуєш refinement і забезпечуєш DoR?</summary><div class="body"><p>Готую контекст і «навіщо», з командою уточнюю AC, розбиваю великі історії, виявляю залежності/ризики, готую беклог на 1–2 спринти вперед. DoR: історія зрозуміла, з AC, оцінена, залежності й макети готові.</p></div></details>
+  <details class="acc"><summary><span class="qnum">4</span> Напиши AC для фільтра директорії (Given-When-Then).</summary><div class="body"><p>Given користувач на сторінці директорії, When обирає юрисдикцію та практику, Then бачить лише фірми з рейтингом у цій зв'язці, відсортовані за band. Edge: порожній результат → порожній стан + пропозиції; доступ до повного профілю — за рівнем підписки.</p></div></details>
+  <details class="acc"><summary><span class="qnum">5</span> Які метрики важливі для subscription-продукту?</summary><div class="body"><p>MRR/ARR, churn, retention/NRR, conversion free→paid, activation, LTV, CAC, LTV:CAC. Фокус PO — на leading-метриках (активація, звичка), що рухають lagging (retention, revenue).</p></div></details>
+  <details class="acc"><summary><span class="qnum">6</span> Як поєднати GA4, Power BI і Clarity в одному рішенні?</summary><div class="body"><p>GA4/Power BI показують «що» (спад конверсії, воронка), Clarity — «чому» (записи сесій, heatmaps, rage clicks). Поєднання кількісного і якісного → гіпотеза → A/B тест → рішення.</p></div></details>
+  <details class="acc"><summary><span class="qnum">7</span> Наведи приклад, де ти застосувала б AI як PO.</summary><div class="body"><p>Ideation і чернетки user stories/AC для рев'ю, синтез фідбеку/інтерв'ю, швидкі прототипи, а в продукті — семантичний пошук по директоріях чи самарі профілів. З обов'язковою людською валідацією й увагою до точності в юридичному домені.</p></div></details>
+  <details class="acc"><summary><span class="qnum">8</span> Яка роль PO під час інциденту в проді?</summary><div class="body"><p>Оцінити вплив на бізнес/користувача, пріоритезувати, комунікувати стейкхолдерам, узгодити тимчасовий обхід vs фікс, після — postmortem і беклог-айтеми на запобігання.</p></div></details>
+  <details class="acc"><summary><span class="qnum">9</span> Що таке GTM і що ти врахуєш при запуску фічі?</summary><div class="body"><p>Go-To-Market: цільовий сегмент, ціннісна пропозиція, пакування/ціна, канали, готовність підтримки/маркетингу/продажів, метрики успіху запуску, поетапний rollout для зниження ризику.</p></div></details>
+  <details class="acc"><summary><span class="qnum">10</span> Як ти працюєш із розподіленою командою?</summary><div class="body"><p>Надлишкова письмова ясність (async), єдине джерело правди (Confluence/Jira), явні домовленості про час відповіді й ухвалення рішень, точки синхронізації через часові пояси, проактивне зняття блокерів.</p></div></details>
+
+</main>
+
+<a href="#" class="totop" aria-label="Нагору">↑</a>
+
+<footer class="site">
+  Interview Prep · Вакансія 1 · Product Owner / BA ·
+  <a href="index.html">← Основи</a> ·
+  <a href="vacancy-ai-pm.html">Вакансія 2 →</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

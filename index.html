@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Основи PO / PM — підготовка</title>
+<meta name="description" content="Базова підготовка до ролей Product Owner / Product Manager: коротка теорія, питання для самоперевірки та тест.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2333569b'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>P</text></svg>">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="mark">P</span> Interview Prep</a>
+    <a class="tab active" href="index.html">Основи PO / PM</a>
+    <a class="tab" href="vacancy-legal-po.html">Вакансія 1 · PO/BA</a>
+    <a class="tab" href="vacancy-ai-pm.html">Вакансія 2 · AI PM</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Сторінка 1 · База</span>
+  <h1>Основи Product Owner / Product Manager</h1>
+  <p class="lead">Коротка теорія по ключових темах, які варто повторити перед будь-якою PO/PM-співбесідою. Нижче — питання для самоперевірки та тест із варіантами відповідей. Це спільна база для обох вакансій.</p>
+</div>
+
+<main>
+
+  <div class="toc">
+    <h3>Зміст</h3>
+    <ol>
+      <li><a href="#roles">PO vs PM vs BA</a></li>
+      <li><a href="#lifecycle">Продуктовий цикл і discovery/delivery</a></li>
+      <li><a href="#strategy">Стратегія: vision, OKR, roadmap</a></li>
+      <li><a href="#backlog">Беклог і user stories</a></li>
+      <li><a href="#ac">Acceptance Criteria, DoR / DoD</a></li>
+      <li><a href="#prio">Пріоритезація</a></li>
+      <li><a href="#agile">Agile / Scrum</a></li>
+      <li><a href="#metrics">Продуктові метрики</a></li>
+      <li><a href="#discovery">Discovery-техніки</a></li>
+      <li><a href="#stakeholders">Стейкхолдери та комунікація</a></li>
+    </ol>
+  </div>
+
+  <div class="block-header"><span class="tag">Теорія</span> Ключові теми</div>
+
+  <!-- 1 -->
+  <section id="roles">
+    <h2 class="section-title"><span class="num">1</span> PO vs PM vs BA</h2>
+    <p class="section-sub">Часте перше питання. Важливо чітко розділяти ролі й показати, що розумієш зони відповідальності.</p>
+    <div class="card">
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Роль</th><th>Головний фокус</th><th>Ключове питання</th></tr></thead>
+          <tbody>
+            <tr><td><b>Product Manager</b></td><td>Чому і що будуємо. Стратегія, ринок, бачення, бізнес-результат.</td><td>«Яку проблему й для кого вирішуємо, і чи варта вона того?»</td></tr>
+            <tr><td><b>Product Owner</b></td><td>Що саме й у якому порядку. Беклог, пріоритети, максимізація цінності роботи команди.</td><td>«Що команда робить наступним і чому?»</td></tr>
+            <tr><td><b>Business Analyst</b></td><td>Деталі рішення. Вимоги, процеси, аналіз, документація, узгодження.</td><td>«Як саме має працювати рішення?»</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fact">
+        <strong>Proxy Product Owner</strong> — коли справжній власник продукту (бізнес) не в команді щодня, і людина «представляє» його: перекладає бізнес-цілі в беклог, ухвалює тактичні рішення, ескалює стратегічні. Саме ця модель у Вакансії 1.
+      </div>
+      <p style="margin-bottom:0">На практиці ролі часто поєднуються (PO+BA, PM+PO). У відповіді підкресли: важливо не назва, а <b>покриті зони відповідальності</b> і хто ухвалює які рішення.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section id="lifecycle">
+    <h2 class="section-title"><span class="num">2</span> Продуктовий цикл і discovery / delivery</h2>
+    <p class="section-sub">Показує, що ти мислиш продуктом, а не тільки тікетами.</p>
+    <div class="card">
+      <p>Спрощений цикл: <b>Discovery → Definition → Delivery → Launch/GTM → Growth → Sunset</b>.</p>
+      <div class="grid">
+        <div class="fact"><strong>Discovery</strong><br>Досліджуємо проблему й попит: чи варто це будувати. Інтерв'ю, дані, гіпотези, прототипи. Мета — зменшити ризик.</div>
+        <div class="fact"><strong>Delivery</strong><br>Будуємо правильно те, що вирішили: беклог, спринти, реліз. Мета — передбачувано доставити цінність.</div>
+      </div>
+      <div class="tip">
+        <strong>Dual-track agile:</strong> discovery і delivery йдуть <b>паралельно</b> — команда одночасно валідує майбутнє і доставляє поточне. Хороша відповідь на «як ти уникаєш будування непотрібного».
+      </div>
+      <p style="margin-bottom:0">Ключова ідея: <b>outcome over output</b> — цінність вимірюється зміною поведінки користувача / бізнес-результатом, а не кількістю зроблених фіч.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section id="strategy">
+    <h2 class="section-title"><span class="num">3</span> Стратегія: vision, OKR, roadmap</h2>
+    <p class="section-sub">Ланцюг «навіщо → куди → як виміряємо → що робимо».</p>
+    <div class="card">
+      <ul>
+        <li><b>Product Vision</b> — довгострокова картина: для кого продукт і яку зміну несе. Стабільна.</li>
+        <li><b>Strategy</b> — як досягти бачення: цільові сегменти, диференціація, ставки.</li>
+        <li><b>OKR</b> — Objective (амбітна ціль) + 3–5 Key Results (вимірювані результати). Задають фокус на квартал.</li>
+        <li><b>Roadmap</b> — план у часі. Сучасний підхід — <b>outcome-based / now-next-later</b>, а не список фіч із датами.</li>
+      </ul>
+      <div class="fact">
+        <strong>KPI vs OKR:</strong> KPI — метрика, яку постійно моніторимо (health). OKR — те, що хочемо <b>зрушити</b> цього періоду (change). North Star Metric — одна головна метрика, що відображає цінність продукту для користувача.
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="backlog">
+    <h2 class="section-title"><span class="num">4</span> Беклог і user stories</h2>
+    <p class="section-sub">Хліб PO. Формат, критерії якості, ієрархія.</p>
+    <div class="card">
+      <p><b>Ієрархія:</b> Theme → Epic → Story → Task. Story — невеликий шматок цінності з погляду користувача.</p>
+      <p><b>Формат історії:</b> <em>As a &lt;роль&gt;, I want &lt;дію&gt;, so that &lt;цінність&gt;.</em> Головне — третя частина (навіщо).</p>
+      <h4>INVEST — критерії доброї історії</h4>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th></th><th>Означає</th></tr></thead>
+          <tbody>
+            <tr><td><b>I</b>ndependent</td><td>Незалежна від інших історій наскільки можливо</td></tr>
+            <tr><td><b>N</b>egotiable</td><td>Не жорсткий контракт — деталі обговорювані</td></tr>
+            <tr><td><b>V</b>aluable</td><td>Дає цінність користувачу/бізнесу</td></tr>
+            <tr><td><b>E</b>stimable</td><td>Команда може оцінити</td></tr>
+            <tr><td><b>S</b>mall</td><td>Влазить у спринт</td></tr>
+            <tr><td><b>T</b>estable</td><td>Є як перевірити, що зроблено</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tip"><strong>Story splitting:</strong> велику історію ділять за workflow-кроками, за правилами бізнесу, за типами даних, happy/edge path, CRUD-операціями. Часте практичне питання.</div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section id="ac">
+    <h2 class="section-title"><span class="num">5</span> Acceptance Criteria, DoR / DoD</h2>
+    <p class="section-sub">Прямо в обов'язках Вакансії 1 — треба знати впевнено.</p>
+    <div class="card">
+      <h4>Acceptance Criteria (AC)</h4>
+      <p>Умови, за яких історія вважається виконаною. Два поширені формати:</p>
+      <ul>
+        <li><b>Given–When–Then (Gherkin):</b> <em>Given</em> контекст, <em>When</em> дія, <em>Then</em> очікуваний результат. Добре для сценаріїв поведінки.</li>
+        <li><b>Rule-based (чек-ліст):</b> список правил/умов. Добре для складної логіки й валідацій.</li>
+      </ul>
+      <div class="grid">
+        <div class="fact"><strong>Definition of Ready (DoR)</strong><br>Умови, за яких історію <b>можна брати</b> в спринт: зрозуміла, з AC, оцінена, залежності відомі, макети є.</div>
+        <div class="fact"><strong>Definition of Done (DoD)</strong><br>Умови, за яких робота <b>завершена</b>: код, тести, рев'ю, документація, задеплоєно. Одна на команду для всіх історій.</div>
+      </div>
+      <p style="margin-bottom:0"><b>AC vs DoD:</b> AC специфічні для конкретної історії; DoD — загальний стандарт якості для всіх історій.</p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="prio">
+    <h2 class="section-title"><span class="num">6</span> Пріоритезація</h2>
+    <p class="section-sub">Знай 3–4 фреймворки і коли який доречний.</p>
+    <div class="card">
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Фреймворк</th><th>Як працює</th><th>Коли</th></tr></thead>
+          <tbody>
+            <tr><td><b>MoSCoW</b></td><td>Must / Should / Could / Won't</td><td>Швидко, для scope релізу, з бізнесом</td></tr>
+            <tr><td><b>RICE</b></td><td>(Reach × Impact × Confidence) / Effort</td><td>Порівняння ініціатив за даними</td></tr>
+            <tr><td><b>WSJF</b></td><td>Cost of Delay / Job Size (SAFe)</td><td>Коли важлива терміновість/затримка</td></tr>
+            <tr><td><b>Kano</b></td><td>Basic / Performance / Delight</td><td>Аналіз задоволеності від фіч</td></tr>
+            <tr><td><b>Value vs Effort</b></td><td>Матриця 2×2 (quick wins)</td><td>Швидка візуальна пріоритезація</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tip"><strong>Головна думка для відповіді:</strong> фреймворк — це інструмент структурувати діалог зі стейкхолдерами, а не «формула істини». Завжди звіряй з product goal і даними.</div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section id="agile">
+    <h2 class="section-title"><span class="num">7</span> Agile / Scrum</h2>
+    <p class="section-sub">Ролі, події, артефакти — база, яку перевіряють майже завжди.</p>
+    <div class="card">
+      <div class="grid">
+        <div class="fact"><strong>Ролі</strong><br>Product Owner, Scrum Master, Developers.</div>
+        <div class="fact"><strong>Артефакти</strong><br>Product Backlog, Sprint Backlog, Increment. Кожен має commitment: Product Goal, Sprint Goal, DoD.</div>
+      </div>
+      <h4>Події (Scrum events)</h4>
+      <ul>
+        <li><b>Sprint</b> — контейнер (1–4 тижні).</li>
+        <li><b>Sprint Planning</b> — що й як робимо цей спринт (Sprint Goal).</li>
+        <li><b>Daily Scrum</b> — 15 хв синхронізації команди.</li>
+        <li><b>Sprint Review</b> — демо інкремента стейкхолдерам, збір фідбеку.</li>
+        <li><b>Retrospective</b> — як покращити процес.</li>
+        <li><b>Backlog Refinement</b> — постійна активність (не окрема подія в Scrum Guide, але на практиці — регулярна сесія).</li>
+      </ul>
+      <div class="fact">
+        <strong>Scrum vs Kanban:</strong> Scrum — ітерації, ролі, фіксований scope спринту. Kanban — безперервний потік, WIP-ліміти, без спринтів. <b>Scrum vs SAFe:</b> SAFe масштабує agile на багато команд (ART, PI planning).
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section id="metrics">
+    <h2 class="section-title"><span class="num">8</span> Продуктові метрики</h2>
+    <p class="section-sub">Мова бізнес-результату. Особливо для subscription-продукту (Вакансія 1).</p>
+    <div class="card">
+      <h4>AARRR (pirate metrics) — воронка</h4>
+      <p><b>A</b>cquisition → <b>A</b>ctivation → <b>R</b>etention → <b>R</b>eferral → <b>R</b>evenue.</p>
+      <h4>Subscription / SaaS</h4>
+      <div>
+        <span class="pill">MRR / ARR</span>
+        <span class="pill">Churn rate</span>
+        <span class="pill">Retention / NRR</span>
+        <span class="pill">LTV</span>
+        <span class="pill">CAC</span>
+        <span class="pill">Conversion</span>
+        <span class="pill">Activation rate</span>
+      </div>
+      <div class="fact" style="margin-top:12px">
+        <strong>North Star Metric</strong> — одна метрика, що найкраще відображає отриману користувачем цінність (напр. для контент-підписки: «активні читачі, що повертаються щотижня»). Навколо неї будують input-метрики.
+      </div>
+      <p style="margin-bottom:0"><b>Leading vs lagging:</b> leading (випереджальні, напр. активація) прогнозують lagging (підсумкові, напр. revenue/churn). PO впливає на leading.</p>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section id="discovery">
+    <h2 class="section-title"><span class="num">9</span> Discovery-техніки</h2>
+    <p class="section-sub">Як розуміти проблему до того, як щось будувати.</p>
+    <div class="card">
+      <ul>
+        <li><b>User interviews</b> — якісне розуміння «чому». Питай про минулу поведінку, не про гіпотетичне.</li>
+        <li><b>Jobs To Be Done (JTBD)</b> — «на яку роботу користувач наймає продукт». Фокус на прогресі, не на демографії.</li>
+        <li><b>MVP</b> — мінімальна версія, щоб перевірити ключову гіпотезу з мінімальними зусиллями. Не «урізаний продукт», а <b>експеримент</b>.</li>
+        <li><b>Prototyping</b> — від паперу до clickable (Figma). Дешево перевірити ідею до розробки.</li>
+        <li><b>A/B тести</b> — кількісна валідація змін на реальних користувачах.</li>
+        <li><b>Opportunity Solution Tree</b> (Teresa Torres) — зв'язок outcome → opportunities → solutions → experiments.</li>
+      </ul>
+      <div class="tip"><strong>Build–Measure–Learn</strong> (Lean Startup): будуємо мінімум → міряємо → вчимося → ітеруємо. Гіпотези формулюй як «ми віримо, що X дасть Y; знатимемо, коли побачимо Z».</div>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section id="stakeholders">
+    <h2 class="section-title"><span class="num">10</span> Стейкхолдери та комунікація</h2>
+    <p class="section-sub">Для обох вакансій це критично: розподілені команди, топ-менеджмент, конфлікти.</p>
+    <div class="card">
+      <ul>
+        <li><b>Stakeholder mapping</b> — матриця Power/Interest (Влада × Зацікавленість): manage closely / keep satisfied / keep informed / monitor.</li>
+        <li><b>RACI</b> — хто Responsible, Accountable, Consulted, Informed по рішеннях.</li>
+        <li><b>Керування конфліктами вимог</b> — виявити справжній інтерес за позицією, звести до product goal/даних, зафіксувати рішення й причину.</li>
+        <li><b>Комунікація з топ-менеджментом</b> — коротко, від результату/ризику, не від деталей реалізації.</li>
+      </ul>
+      <div class="fact"><strong>Розподілені команди:</strong> надлишкова письмова ясність (async), єдине джерело правди (Confluence/Jira), явні домовленості про час відповіді й ухвалення рішень, регулярні точки синхронізації через часові пояси.</div>
+    </div>
+  </section>
+
+  <!-- Self-check -->
+  <div class="block-header"><span class="tag">Самоперевірка</span> Питання (спробуй відповісти вголос)</div>
+
+  <div class="btn-row">
+    <button class="btn" id="expandAll">Розгорнути всі</button>
+    <button class="btn" id="collapseAll">Згорнути всі</button>
+  </div>
+
+  <details class="acc"><summary><span class="qnum">1</span> Чим PO відрізняється від PM і від BA?</summary><div class="body"><p>PM — чому/що (стратегія, ринок, бізнес-результат). PO — що/в якому порядку (беклог, пріоритети, цінність роботи команди). BA — як саме має працювати рішення (вимоги, процеси, деталі). На практиці поєднуються; головне — покриті зони відповідальності й хто ухвалює рішення.</p></div></details>
+  <details class="acc"><summary><span class="qnum">2</span> Що таке Proxy Product Owner?</summary><div class="body"><p>Людина, що представляє реального власника продукту (бізнес), якого немає в команді щодня: перекладає бізнес-цілі в беклог, ухвалює тактичні рішення, ескалює стратегічні.</p></div></details>
+  <details class="acc"><summary><span class="qnum">3</span> Поясни різницю discovery vs delivery і що таке dual-track.</summary><div class="body"><p>Discovery — чи варто будувати (дослідження проблеми, гіпотези, прототипи). Delivery — будуємо правильно (беклог, спринти, реліз). Dual-track — обидва треки йдуть паралельно: команда валідує майбутнє і доставляє поточне одночасно.</p></div></details>
+  <details class="acc"><summary><span class="qnum">4</span> Що робить user story «доброю»? Розкажи INVEST.</summary><div class="body"><p>Independent, Negotiable, Valuable, Estimable, Small, Testable. Формат: As a &lt;роль&gt;, I want &lt;дію&gt;, so that &lt;цінність&gt; — головне «навіщо».</p></div></details>
+  <details class="acc"><summary><span class="qnum">5</span> Різниця між Acceptance Criteria і Definition of Done?</summary><div class="body"><p>AC — умови готовності конкретної історії (Given-When-Then або чек-ліст правил). DoD — загальний стандарт якості для всіх історій (код, тести, рев'ю, деплой). AC специфічні, DoD універсальний.</p></div></details>
+  <details class="acc"><summary><span class="qnum">6</span> Що входить у Definition of Ready?</summary><div class="body"><p>Умови, за яких історію можна брати в спринт: зрозуміла, є AC, оцінена, залежності відомі, макети/дані готові. Захищає команду від нечітких історій.</p></div></details>
+  <details class="acc"><summary><span class="qnum">7</span> Які знаєш фреймворки пріоритезації та коли який?</summary><div class="body"><p>MoSCoW (scope релізу з бізнесом), RICE (порівняння за даними), WSJF (терміновість/cost of delay, SAFe), Kano (задоволеність від фіч), Value/Effort (швидка матриця). Це інструмент діалогу, не формула істини.</p></div></details>
+  <details class="acc"><summary><span class="qnum">8</span> Назви події Scrum і їх мету.</summary><div class="body"><p>Sprint (контейнер), Planning (Sprint Goal), Daily (синхронізація), Review (демо + фідбек), Retrospective (покращення процесу), Refinement (підготовка беклогу). Артефакти: Product/Sprint Backlog, Increment.</p></div></details>
+  <details class="acc"><summary><span class="qnum">9</span> Що таке North Star Metric і чим відрізняється leading від lagging?</summary><div class="body"><p>NSM — одна метрика, що відображає отриману користувачем цінність. Leading (активація) прогнозують lagging (revenue, churn). PO впливає на leading, щоб зрушити lagging.</p></div></details>
+  <details class="acc"><summary><span class="qnum">10</span> Що таке MVP і чим він НЕ є?</summary><div class="body"><p>MVP — мінімальна версія для перевірки ключової гіпотези з мінімальними зусиллями; це експеримент, а не просто «урізаний продукт». Мета — навчання, а не повнота.</p></div></details>
+  <details class="acc"><summary><span class="qnum">11</span> Як керуєш конфліктом вимог між стейкхолдерами?</summary><div class="body"><p>Виявити справжній інтерес за позицією, звести до product goal і даних, оцінити вплив/цінність, зафіксувати рішення й причину, комунікувати. За потреби — ескалація до accountable-особи.</p></div></details>
+  <details class="acc"><summary><span class="qnum">12</span> Як пріоритезуєш беклог, коли всі кажуть «це терміново»?</summary><div class="body"><p>Прив'язую до product goal/OKR, оцінюю value vs effort та cost of delay (WSJF), показую trade-off прозоро, ухвалюю рішення й пояснюю причину. «Термінове для всіх» вирішується даними, а не гучністю.</p></div></details>
+
+  <!-- Quiz -->
+  <div class="block-header"><span class="tag">Тест</span> Самоконтроль (12 питань)</div>
+  <div class="callout">Одне питання — чотири варіанти. Після відповіді буде пояснення, у кінці — результат. Можна перепроходити.</div>
+  <div class="quiz-card" id="quiz"><noscript>Для тесту потрібен увімкнений JavaScript.</noscript></div>
+
+</main>
+
+<a href="#" class="totop" aria-label="Нагору">↑</a>
+
+<footer class="site">
+  Interview Prep · Основи PO / PM ·
+  <a href="vacancy-legal-po.html">Вакансія 1 →</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

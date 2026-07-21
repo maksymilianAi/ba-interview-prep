@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вакансія 2 — AI Product Manager</title>
+<meta name="description" content="Підготовка до співбесіди на AI Product Manager: BABOK, техніки BA, BPMN/UML, вимоги, AI-в-продукті, JIRA/Confluence.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2333569b'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>2</text></svg>">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="mark">P</span> Interview Prep</a>
+    <a class="tab" href="index.html">Основи PO / PM</a>
+    <a class="tab" href="vacancy-legal-po.html">Вакансія 1 · PO/BA</a>
+    <a class="tab active" href="vacancy-ai-pm.html">Вакансія 2 · AI PM</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Сторінка 3 · Вакансія 2</span>
+  <h1>AI Product Manager — сильний BA + продукт</h1>
+  <p class="lead">Попри назву «AI PM», тіло вакансії — це важкий класичний BABOK-BA з product-management зверху, для будівельного консалтингу. Нижче — техніки BA, моделювання, вимоги, робота з AI-в-продукті та питання для самоперевірки.</p>
+</div>
+
+<main>
+
+  <div class="toc">
+    <h3>Зміст</h3>
+    <ol>
+      <li><a href="#context">Контекст вакансії</a></li>
+      <li><a href="#babok">BABOK: 6 областей знань</a></li>
+      <li><a href="#requirements">Типи вимог і NFR</a></li>
+      <li><a href="#techniques">Техніки BA</a></li>
+      <li><a href="#modeling">BPMN та UML</a></li>
+      <li><a href="#lifecycle">Requirements lifecycle і acceptance</a></li>
+      <li><a href="#thinking">Systems thinking, декомпозиція</a></li>
+      <li><a href="#tools">JIRA, Confluence, прототипування</a></li>
+      <li><a href="#ai">AI у продукті</a></li>
+      <li><a href="#certs">Сертифікати й best practices</a></li>
+      <li><a href="#behavioral">Behavioral і питання</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <b>Головний акцент вакансії:</b> назва «AI Product Manager», але 80% вимог — <b>BABOK / IIBA</b>: business needs, capability gaps, requirements lifecycle, solution acceptance, NFR, functional decomposition, моделювання. Плюс product management і AI-грамотність. Готуємось як <b>сильний senior BA</b>, що вміє в продукт і AI.
+  </div>
+
+  <div class="block-header"><span class="tag">Контекст</span> Що це за роль</div>
+
+  <!-- 1 -->
+  <section id="context">
+    <h2 class="section-title"><span class="num">1</span> Контекст вакансії</h2>
+    <div class="card">
+      <ul>
+        <li><b>Наймач:</b> згадка «Intellias corporate knowledge base» видає, що це <b>Intellias</b> (аутсорс/продуктова інженерія), роль — на клієнта.</li>
+        <li><b>Клієнт/домен:</b> будівельний консалтинг з 1974 року. Тон опису — про людей, гнучкість, «different».</li>
+        <li><b>Суть:</b> senior BA / product-роль: від виявлення потреб і capability gaps до визначення рішення, вимог, моделювання, приймання рішення й менторства аналітиків.</li>
+        <li><b>«AI» у назві:</b> очікують AI-грамотність — тож окремо готуємо блок AI-в-продукті (розділ 9).</li>
+      </ul>
+      <div class="fact"><strong>Стиль вимог — прямо IIBA BABOK:</strong> «business analysis activities and techniques», «requirements lifecycle», «solution acceptance», «non-functional requirements», «functional decomposition», сертифікати CCBA/CBAP. Це підказка, з якого «підручника» будуть питання.</div>
+    </div>
+  </section>
+
+  <div class="block-header"><span class="tag">Фундамент</span> BABOK і вимоги</div>
+
+  <!-- 2 -->
+  <section id="babok">
+    <h2 class="section-title"><span class="num">2</span> BABOK: 6 областей знань</h2>
+    <p class="section-sub">Каркас професії бізнес-аналітика за IIBA. Треба вміти назвати й пояснити.</p>
+    <div class="card">
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Область знань</th><th>Про що</th></tr></thead>
+          <tbody>
+            <tr><td><b>Business Analysis Planning &amp; Monitoring</b></td><td>Як організувати сам BA-підхід: стейкхолдери, активності, governance, метрики BA.</td></tr>
+            <tr><td><b>Elicitation &amp; Collaboration</b></td><td>Виявлення інформації (інтерв'ю, воркшопи) і співпраця зі стейкхолдерами, підтвердження результатів.</td></tr>
+            <tr><td><b>Requirements Life Cycle Management</b></td><td>Трасування, підтримка, пріоритезація, оцінка змін, схвалення вимог протягом їх життя.</td></tr>
+            <tr><td><b>Strategy Analysis</b></td><td>Поточний стан, майбутній стан, оцінка ризиків, визначення стратегії зміни (capability gaps).</td></tr>
+            <tr><td><b>Requirements Analysis &amp; Design Definition (RADD)</b></td><td>Специфікація, моделювання, верифікація/валідація вимог, визначення дизайну рішення, оцінка опцій.</td></tr>
+            <tr><td><b>Solution Evaluation</b></td><td>Оцінка ефективності впровадженого рішення, усунення обмежень цінності.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tip"><strong>Плюс BACCM</strong> (Business Analysis Core Concept Model), 6 понять: Change, Need, Solution, Stakeholder, Value, Context. Зручний каркас, щоб структурувати будь-яку відповідь.</div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section id="requirements">
+    <h2 class="section-title"><span class="num">3</span> Типи вимог і NFR</h2>
+    <p class="section-sub">Класика, яку майже завжди питають. NFR згадані у вакансії явно.</p>
+    <div class="card">
+      <h4>Класифікація вимог (BABOK)</h4>
+      <ul>
+        <li><b>Business requirements</b> — цілі/потреби організації (навіщо).</li>
+        <li><b>Stakeholder requirements</b> — потреби конкретних стейкхолдерів.</li>
+        <li><b>Solution requirements</b> — що має робити рішення:
+          <ul>
+            <li><b>Functional</b> — поведінка, функції.</li>
+            <li><b>Non-functional (NFR)</b> — якісні характеристики.</li>
+          </ul>
+        </li>
+        <li><b>Transition requirements</b> — тимчасові, для переходу as-is → to-be (міграція даних, навчання).</li>
+      </ul>
+      <h4>NFR — приклади (запам'ятати категорії)</h4>
+      <div>
+        <span class="pill">Performance</span>
+        <span class="pill">Scalability</span>
+        <span class="pill">Availability</span>
+        <span class="pill">Security</span>
+        <span class="pill">Usability</span>
+        <span class="pill">Reliability</span>
+        <span class="pill">Maintainability</span>
+        <span class="pill">Compliance</span>
+        <span class="pill">Portability</span>
+      </div>
+      <div class="fact" style="margin-top:12px"><strong>External interfaces &amp; constraints</strong> (теж у вакансії): інтерфейси до інших систем (API, файли, інтеграції) та обмеження (технологічні, бюджетні, регуляторні), які звужують простір рішення.</div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="techniques">
+    <h2 class="section-title"><span class="num">4</span> Техніки BA</h2>
+    <p class="section-sub">«Extensive knowledge of BA techniques» — назви кілька з кожної групи.</p>
+    <div class="card">
+      <div class="grid">
+        <div class="fact"><strong>Elicitation</strong><br>Інтерв'ю, воркшопи, brainstorming, observation, document analysis, survey/questionnaire, prototyping.</div>
+        <div class="fact"><strong>Аналіз/моделювання</strong><br>Process modeling (BPMN), use cases &amp; scenarios, user stories, data modeling (ERD), state diagrams, decision tables/trees, business rules.</div>
+        <div class="fact"><strong>Пріоритезація/оцінка</strong><br>MoSCoW, прioritization, impact analysis, SWOT, root cause (5 Whys, Ishikawa), gap analysis.</div>
+        <div class="fact"><strong>Стейкхолдери</strong><br>Stakeholder map (RACI, Power/Interest), personas, interviews, workshops facilitation.</div>
+      </div>
+      <div class="tip" style="margin-top:12px"><strong>Capability gap analysis</strong> (прямо в обов'язках): порівняти поточні спроможності організації з потрібними для цілі → знайти розриви → запропонувати опції рішення. Класична зв'язка Strategy Analysis.</div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section id="modeling">
+    <h2 class="section-title"><span class="num">5</span> BPMN та UML</h2>
+    <p class="section-sub">«Modeling skills to represent requirements graphically» + можливий сертифікат OMG.</p>
+    <div class="card">
+      <h4>BPMN (моделювання процесів)</h4>
+      <ul>
+        <li>Events (start/end/intermediate), Activities/Tasks, Gateways (XOR/AND/OR), Sequence flow.</li>
+        <li>Pools &amp; Lanes — хто виконує (ролі/системи); message flow між пулами.</li>
+        <li>Використання: as-is / to-be процеси, оптимізація процесів (прямо у вимогах).</li>
+      </ul>
+      <h4>UML (моделювання систем) — головні діаграми для BA</h4>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Діаграма</th><th>Про що</th></tr></thead>
+          <tbody>
+            <tr><td><b>Use Case</b></td><td>Актори та функції системи (хто що може)</td></tr>
+            <tr><td><b>Activity</b></td><td>Потік дій / логіка процесу (близько до flowchart)</td></tr>
+            <tr><td><b>Sequence</b></td><td>Взаємодія об'єктів у часі (обмін повідомленнями)</td></tr>
+            <tr><td><b>Class</b></td><td>Структура даних/сутностей і зв'язки</td></tr>
+            <tr><td><b>State</b></td><td>Стани об'єкта та переходи між ними</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fact"><strong>BPMN vs UML:</strong> BPMN — про <b>бізнес-процеси</b> (потік роботи між ролями). UML — про <b>систему/ПЗ</b> (структура, поведінка, взаємодія). BA часто використовує обидва для різних зрізів.</div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="lifecycle">
+    <h2 class="section-title"><span class="num">6</span> Requirements lifecycle і solution acceptance</h2>
+    <p class="section-sub">Обидва терміни явно у вакансії.</p>
+    <div class="card">
+      <h4>Requirements Life Cycle</h4>
+      <ul>
+        <li><b>Trace</b> — трасування вимог (від бізнес-цілі до реалізації й тесту), traceability matrix.</li>
+        <li><b>Maintain</b> — підтримувати вимоги в актуальному, повторно використовуваному стані.</li>
+        <li><b>Prioritize</b> — пріоритезувати за цінністю/ризиком/залежностями.</li>
+        <li><b>Assess changes</b> — оцінювати вплив змін (impact analysis) до ухвалення.</li>
+        <li><b>Approve</b> — узгодження й формальне схвалення вимог зі стейкхолдерами.</li>
+      </ul>
+      <h4>Solution acceptance</h4>
+      <p style="margin-bottom:0">Керування <b>acceptance criteria</b> рішення; внутрішнє й зовнішнє <b>приймання</b> (internal/external acceptance); UAT (user acceptance testing) — підтвердження, що рішення відповідає потребам до релізу. Далі — <b>Solution Evaluation</b>: чи дало рішення очікувану цінність.</p>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section id="thinking">
+    <h2 class="section-title"><span class="num">7</span> Systems thinking і функціональна декомпозиція</h2>
+    <p class="section-sub">Названі як окремі скіли — варто мати чітке визначення.</p>
+    <div class="card">
+      <div class="grid">
+        <div class="fact"><strong>Systems thinking</strong><br>Бачити систему як ціле: елементи, зв'язки, зворотні зв'язки, як зміна в одному місці впливає на інше. Уникати локальної оптимізації, що шкодить цілому.</div>
+        <div class="fact"><strong>Functional decomposition</strong><br>Розкладати складну функцію/проблему на менші, керовані частини (зверху вниз), доки кожна не стане зрозумілою й реалізовною. Основа оцінки, планування, розподілу роботи.</div>
+      </div>
+      <div class="tip" style="margin-top:12px"><strong>Critical assessment з багатьох джерел</strong> (теж у вакансії): звіряти інформацію з різних стейкхолдерів/систем, виявляти суперечності, відділяти факт від думки, доходити до першопричини.</div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section id="tools">
+    <h2 class="section-title"><span class="num">8</span> JIRA, Confluence, прототипування</h2>
+    <p class="section-sub">JIRA &amp; Confluence названі прямо — треба звучати як щоденний користувач.</p>
+    <div class="card">
+      <ul>
+        <li><b>JIRA</b> — управління беклогом і роботою: issue types (epic/story/task/bug), workflow і статуси, спринти/дошки, епіки й зв'язки (links, dependencies), фільтри JQL, звіти (burndown, velocity).</li>
+        <li><b>Confluence</b> — єдине джерело правди: BRD/специфікації, діаграми, рішення (decision log), нотатки воркшопів, зв'язок сторінок із Jira-задачами.</li>
+        <li><b>Прототипування</b> — Figma / Balsamiq / Miro: від lo-fi wireframe до clickable-прототипу для валідації до розробки.</li>
+      </ul>
+      <div class="fact"><strong>Traceability на практиці:</strong> вимога в Confluence ↔ epic/story в Jira ↔ тест-кейс. Так демонструють керований requirements lifecycle.</div>
+    </div>
+  </section>
+
+  <div class="block-header"><span class="tag">AI</span> Найсвіжіша частина</div>
+
+  <!-- 9 -->
+  <section id="ai">
+    <h2 class="section-title"><span class="num">9</span> AI у продукті</h2>
+    <p class="section-sub">Назва ролі — «AI PM». Достатньо грамотно оперувати поняттями і думати продуктом на AI.</p>
+    <div class="card">
+      <h4>Базові поняття (must-know)</h4>
+      <ul>
+        <li><b>LLM</b> — велика мовна модель; генерує статистично ймовірний текст, не «знає істину».</li>
+        <li><b>Hallucination</b> — впевнено сформульована, але хибна/вигадана відповідь. Знижують через grounding, нижчу «температуру» для фактичних задач, «скажи не знаю», guardrails.</li>
+        <li><b>RAG</b> (Retrieval-Augmented Generation) — підмішування релевантних документів у контекст перед генерацією, щоб відповідь спиралась на джерела, а не лише на навчання моделі.</li>
+        <li><b>Prompt engineering</b> — як формулювати інструкції моделі; few-shot, системні промпти.</li>
+        <li><b>Fine-tuning vs RAG vs prompting</b> — три способи «навчити» під задачу: дотренувати модель / дати контекст / краще попросити. RAG зазвичай дешевший і свіжіший за fine-tuning.</li>
+        <li><b>Guardrails</b> — обмеження на вхід/вихід (фільтри, валідація, політики), щоб уникати шкідливих/хибних відповідей.</li>
+      </ul>
+      <h4>Оцінка AI-фічі (evaluation)</h4>
+      <ul>
+        <li><b>Offline eval set</b> — набір прикладів для перевірки якості до релізу.</li>
+        <li><b>Online</b> — що міряємо після запуску: точність, задоволеність, deflection, escalation rate, latency, cost per query.</li>
+        <li>Для генеративних — human evaluation, а не лише автометрики.</li>
+      </ul>
+      <h4>Responsible AI</h4>
+      <p style="margin-bottom:0">Fairness, transparency, accountability. На практиці: повідомляти користувача, що працює AI; давати спосіб оскаржити результат; моніторити шкідливі наслідки; документувати рішення для аудиту.</p>
+      <div class="tip" style="margin-top:12px"><strong>Приклад під домен (будівництво):</strong> AI-асистент, що витягує вимоги з тендерної/проєктної документації, або оцінює ризики/кошториси. Проговори: джерела (RAG на документах клієнта), точність, human-in-the-loop, метрики успіху, ризик галюцинацій у критичних розрахунках.</div>
+    </div>
+  </section>
+
+  <div class="block-header"><span class="tag">Розмова</span> Сертифікати, behavioral, питання</div>
+
+  <!-- 10 -->
+  <section id="certs">
+    <h2 class="section-title"><span class="num">10</span> Сертифікати й best practices</h2>
+    <p class="section-sub">Перелічені як «плюс» — знай, що кожен означає.</p>
+    <div class="card">
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Сертифікат</th><th>Про що</th></tr></thead>
+          <tbody>
+            <tr><td><b>IIBA CCBA / CBAP</b></td><td>Бізнес-аналіз за BABOK. CCBA — середній рівень, CBAP — просунутий (більше досвіду).</td></tr>
+            <tr><td><b>OMG UML (OCUP)</b></td><td>Володіння UML-моделюванням.</td></tr>
+            <tr><td><b>OMG BPMN (OCEB)</b></td><td>Моделювання бізнес-процесів BPMN.</td></tr>
+            <tr><td><b>PMI-PBA</b></td><td>Business analysis від PMI (більше проєктний контекст).</td></tr>
+            <tr><td><b>Pragmatic (Marketing)</b></td><td>Product management framework (ринок → продукт).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fact"><strong>Якщо спитають про наявність:</strong> чесно про те, що є/в процесі, і покажи, що <b>знаєш зміст</b> (BABOK-області, UML/BPMN) — це важливіше за «корочку».</div>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section id="behavioral">
+    <h2 class="section-title"><span class="num">11</span> Behavioral і питання інтерв'юеру</h2>
+    <p class="section-sub">STAR-історії + зрілі питання.</p>
+    <div class="card">
+      <h4>Ймовірні behavioral-питання</h4>
+      <ul>
+        <li>Як ти виявляла capability gaps / pain points і пропонувала опції рішення.</li>
+        <li>Складний стейкхолдер / топ-менеджмент — як комунікувала й вела воркшоп.</li>
+        <li>Конфлікт вимог — як довела до resolution.</li>
+        <li>Керування scope і змінами (impact analysis).</li>
+        <li>Менторство / knowledge-sharing для інших аналітиків.</li>
+        <li>Приклад презентації для великої аудиторії.</li>
+        <li>Прийняла критику й покращила підхід (self-improvement — прямо у вимогах).</li>
+      </ul>
+      <h4>Питання інтерв'юеру (обери 3–4)</h4>
+      <ul>
+        <li>Наскільки роль «AI» реальна: це продукт на AI чи використання AI у процесі BA?</li>
+        <li>Який стан вимог і BA-процесів у клієнта зараз — що хотіли б покращити?</li>
+        <li>Хто ключові стейкхолдери на боці клієнта й наскільки вони залучені?</li>
+        <li>Який продукт/системи в скоупі (ERP/CRM/IoT)? Домен даних?</li>
+        <li>Як виглядає взаємодія Intellias ↔ клієнт у прийнятті рішень?</li>
+        <li>Чи є очікування щодо менторства й розбудови BA-практики?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Self-check -->
+  <div class="block-header"><span class="tag">Самоперевірка</span> Питання</div>
+  <div class="btn-row">
+    <button class="btn" id="expandAll">Розгорнути всі</button>
+    <button class="btn" id="collapseAll">Згорнути всі</button>
+  </div>
+
+  <details class="acc"><summary><span class="qnum">1</span> Назви 6 областей знань BABOK.</summary><div class="body"><p>BA Planning &amp; Monitoring; Elicitation &amp; Collaboration; Requirements Life Cycle Management; Strategy Analysis; Requirements Analysis &amp; Design Definition (RADD); Solution Evaluation. Плюс BACCM: Change, Need, Solution, Stakeholder, Value, Context.</p></div></details>
+  <details class="acc"><summary><span class="qnum">2</span> Які типи вимог розрізняють у BABOK?</summary><div class="body"><p>Business, Stakeholder, Solution (functional + non-functional), Transition. Business — навіщо; solution — що робить система; transition — тимчасові для переходу as-is→to-be.</p></div></details>
+  <details class="acc"><summary><span class="qnum">3</span> Що таке NFR? Наведи категорії.</summary><div class="body"><p>Non-functional requirements — якісні характеристики рішення: performance, scalability, availability, security, usability, reliability, maintainability, compliance, portability. Не «що робить», а «наскільки добре».</p></div></details>
+  <details class="acc"><summary><span class="qnum">4</span> Поясни capability gap analysis.</summary><div class="body"><p>Порівняти поточні спроможності організації з потрібними для досягнення цілі, знайти розриви (gaps) і запропонувати опції рішення. Частина Strategy Analysis (current → future state).</p></div></details>
+  <details class="acc"><summary><span class="qnum">5</span> Чим BPMN відрізняється від UML?</summary><div class="body"><p>BPMN — моделювання бізнес-процесів (потік роботи між ролями: events, tasks, gateways, lanes). UML — моделювання системи/ПЗ (use case, activity, sequence, class, state). BA використовує обидва для різних зрізів.</p></div></details>
+  <details class="acc"><summary><span class="qnum">6</span> Які етапи входять у requirements lifecycle management?</summary><div class="body"><p>Trace (трасування), Maintain (підтримка), Prioritize (пріоритезація), Assess changes (impact analysis), Approve (схвалення). Мета — керувати вимогами протягом усього їх життя.</p></div></details>
+  <details class="acc"><summary><span class="qnum">7</span> Що таке solution acceptance і UAT?</summary><div class="body"><p>Керування acceptance criteria рішення, внутрішнє й зовнішнє приймання. UAT — user acceptance testing: підтвердження, що рішення відповідає потребам користувача до релізу. Далі — Solution Evaluation: чи дало очікувану цінність.</p></div></details>
+  <details class="acc"><summary><span class="qnum">8</span> Поясни systems thinking і functional decomposition.</summary><div class="body"><p>Systems thinking — бачити систему цілісно (елементи, зв'язки, зворотні зв'язки, вплив змін). Functional decomposition — розкладати складну функцію на менші керовані частини зверху вниз до зрозумілих реалізовних одиниць.</p></div></details>
+  <details class="acc"><summary><span class="qnum">9</span> Що таке RAG і навіщо він для AI-продукту?</summary><div class="body"><p>Retrieval-Augmented Generation: перед генерацією підмішуємо релевантні документи в контекст, щоб відповідь спиралась на джерела, а не лише на навчання моделі. Знижує галюцинації, дає свіжі й доменні дані (напр. документи клієнта).</p></div></details>
+  <details class="acc"><summary><span class="qnum">10</span> Як оцінити, що AI-фіча працює?</summary><div class="body"><p>Offline eval set до релізу; online-метрики після (точність, задоволеність, deflection, escalation, latency, cost per query); для генеративних — human evaluation. Плюс Responsible AI: прозорість, можливість оскаржити, моніторинг, документування.</p></div></details>
+  <details class="acc"><summary><span class="qnum">11</span> Що означають CCBA і CBAP?</summary><div class="body"><p>Сертифікації IIBA за BABOK: CCBA — середній рівень (менше досвіду), CBAP — просунутий (більше досвіду й відповідальності). Обидва підтверджують володіння бізнес-аналізом.</p></div></details>
+  <details class="acc"><summary><span class="qnum">12</span> Як би ти підійшла до AI-асистента для будівельного консалтингу?</summary><div class="body"><p>Визначити потребу/pain point і сегмент; RAG на документах клієнта (тендери, кошториси, норми); human-in-the-loop для критичних розрахунків; метрики успіху й eval-набір; guardrails і увага до галюцинацій; responsible AI (прозорість, аудит). Спершу — цінність і ризик, потім реалізація.</p></div></details>
+
+</main>
+
+<a href="#" class="totop" aria-label="Нагору">↑</a>
+
+<footer class="site">
+  Interview Prep · Вакансія 2 · AI Product Manager ·
+  <a href="vacancy-legal-po.html">← Вакансія 1</a> ·
+  <a href="index.html">Основи</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
